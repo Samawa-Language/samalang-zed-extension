@@ -1,0 +1,7 @@
+name = "Samalang"
+grammar = "samawa_language"
+path_suffixes = ["sl"]
+line_comments = ["-- "]
+
+[language_id]
+name = "samalang"

@@ -1,0 +1,11 @@
+id = "samalang"
+name = "Samalang"
+description = "Samalang extension for zed"
+version = "0.0.1"
+schema_version = 1
+authors = ["Rzfan03"]
+repository = "https://github.com/Samawa-Language/samalang-zed-extension"
+
+[grammars.samawa_language]
+repository = "https://github.com/Samawa-Language/samalang-treesitter"
+rev = "main"
