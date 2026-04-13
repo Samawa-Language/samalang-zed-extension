@@ -1,0 +1,22 @@
+{
+  "$schema": "https://zed.dev/schema/icon_themes/v0.3.0.json",
+  "author": "Rzfan03",
+  "name": "Samalang Icons",
+  "themes": [
+    {
+      "name": "Samalang Icons",
+      "appearance": "dark",
+      "file_suffixes": {
+        "sl": "samalang"
+      },
+      "file_icons": {
+        "samalang": {
+          "path": "./icons/icon_extension.svg"
+        },
+        "default": {
+          "path": "./icons/file.svg"
+        }
+      }
+    }
+  ]
+}

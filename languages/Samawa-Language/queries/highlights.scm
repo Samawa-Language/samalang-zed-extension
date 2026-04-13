@@ -1,40 +1,42 @@
-[
-  "lamen"
-  "lamen_no"
-  "lamen_no_kebali"
-  "semalik"
-] @keyword.control.conditional
+; highlights.scm - Samalang
 
-[
-  "selama"
-  "sampe"
-  "jangka_mo"
-  "boat"
-] @keyword.control.repeat
+; Keywords
+("ada") @keyword
+("fungsi") @keyword
+("jure_mo") @keyword
+("lamen") @keyword
+("tres") @keyword
+("lamen_no_kebali") @keyword
+("lamen_no") @keyword
+("untu") @keyword
+("selama") @keyword
+("boat") @keyword
+("untuk") @keyword
+("tulis") @keyword
+("semalik") @keyword
+("jangka_mo") @keyword
+("true") @boolean
+("false") @boolean
+("nda_isi") @constant
+("no") @operator   ; unary not
 
-[
-  "ada"
-  "fungsi"
-  "jure_mo"
-  "untu"
-  "untuk"
-  "tres"
-] @keyword
-
-["=" "==" "!=" "<" ">" "+" "-" "*" "/" "%" "+=" "-="] @operator
-"no" @keyword.operator
-
-["(" ")" "{" "}" "[" "]" "," "." ":" ";"] @punctuation.bracket
-
-(number) @number
+; Literals
 (string) @string
-(boolean) @constant.builtin
-(nil) @constant.builtin
-
-(function_definition name: (identifier) @function)
-(function_call name: (identifier) @function.call)
-(print_statement "tulis" @function.builtin)
-
-(parameters (identifier) @variable.parameter)
-(identifier) @variable
+(number) @number
 (comment) @comment
+
+; Identifiers & functions
+(identifier) @variable
+(function_definition (identifier) @function)
+(parameters (identifier) @parameter)
+
+; Expressions
+(binary_expression) @operator
+(unary_expression) @operator
+
+; Control flow
+(if_statement) @keyword.control
+(while_statement) @keyword.control
+(for_statement) @keyword.control
+(elseif_clause) @keyword.control
+(else_clause) @keyword.control
