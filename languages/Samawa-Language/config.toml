@@ -2,6 +2,14 @@ name = "Samalang"
 grammar = "samawa_language"
 path_suffixes = ["sl"]
 line_comments = ["-- "]
+autoclose_before = ";:.,=}])>"
+brackets = [
+    { start = "{", end = "}", close = true, newline = true },
+    { start = "[", end = "]", close = true, newline = true },
+    { start = "(", end = ")", close = true, newline = true },
+    { start = "\"", end = "\"", close = true, newline = false, not_in = ["string"] },
+    { start = "'", end = "'", close = true, newline = false, not_in = ["string"] },
+]
 
-[language_id]
-name = "samalang"
+increase_indent_pattern = "^\\s*(lamen|lamen_no_kebali|lamen_no|boat|selama|untu|untuk|ulang|fungsi)"
+decrease_indent_pattern = "^\\s*(jure_mo|sampe)"

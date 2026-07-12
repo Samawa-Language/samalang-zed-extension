@@ -1,7 +1,16 @@
-; brackets.scm - Samalang
-; Auto close & highlight matching brackets
+; brackets.scm - SamaLang
 
 (
   "(" @opening
   ")" @closing
+)
+
+(
+  "[" @opening
+  "]" @closing
+)
+
+(
+  "{" @opening
+  "}" @closing
 )

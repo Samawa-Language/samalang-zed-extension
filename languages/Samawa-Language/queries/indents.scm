@@ -1,28 +1,57 @@
-; indents.scm - Samalang
-; Atur indent otomatis untuk block kode
+; indents.scm - SamaLang
 
-; Indent masuk ke dalam block
+; Increase indent for block starts
 (
-  [
-    (function_definition)
-    (if_statement)
-    (elseif_clause)
-    (else_clause)
-    (while_statement)
-    (for_statement)
-  ] @indent
-)
-
-; Dedent (kurangi indent) pas ketemu penutup block
-(
-  (jure_mo) @dedent
-)
-
-; Optional: indent di dalam kurung dan print
-(
-  (parameters) @indent
+  (if_statement) @indent.begin
 )
 
 (
-  (print_statement) @indent
+  (elseif_clause) @indent.begin
 )
+
+(
+  (else_clause) @indent.begin
+)
+
+(
+  (while_statement) @indent.begin
+)
+
+(
+  (for_statement) @indent.begin
+)
+
+(
+  (repeat_statement) @indent.begin
+)
+
+(
+  (function_definition) @indent.begin
+)
+
+(
+  "(" @indent.begin
+  ")" @indent.end
+)
+
+(
+  "{" @indent.begin
+  "}" @indent.end
+)
+
+(
+  "[" @indent.begin
+  "]" @indent.end
+)
+
+; Decrease indent for block ends
+(
+  "jure_mo" @indent.end
+)
+
+(
+  "sampe" @indent.end
+)
+
+; Ignore comments for indentation
+(comment) @indent.ignore

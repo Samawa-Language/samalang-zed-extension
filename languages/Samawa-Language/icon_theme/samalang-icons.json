@@ -11,7 +11,7 @@
       },
       "file_icons": {
         "samalang": {
-          "path": "./icons/icon_extension.svg"
+          "path": "./icons/icon-extension.svg"
         },
         "default": {
           "path": "./icons/file.svg"

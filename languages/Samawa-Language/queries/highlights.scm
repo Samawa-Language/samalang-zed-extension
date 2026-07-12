@@ -1,42 +1,142 @@
-; highlights.scm - Samalang
+; highlights.scm - SamaLang
 
 ; Keywords
-("ada") @keyword
-("fungsi") @keyword
-("jure_mo") @keyword
-("lamen") @keyword
-("tres") @keyword
-("lamen_no_kebali") @keyword
-("lamen_no") @keyword
-("untu") @keyword
-("selama") @keyword
-("boat") @keyword
-("untuk") @keyword
-("tulis") @keyword
-("semalik") @keyword
-("jangka_mo") @keyword
-("true") @boolean
-("false") @boolean
-("nda_isi") @constant
-("no") @operator   ; unary not
+[
+  "ada"
+  "fungsi"
+  "jure_mo"
+  "lamen"
+  "tres"
+  "lamen_no_kebali"
+  "lamen_no"
+  "untu"
+  "selama"
+  "boat"
+  "untuk"
+  "tulis"
+  "semalik"
+  "jangka_mo"
+  "ulang"
+  "sampe"
+  "lalo"
+  "kenang"
+] @keyword
 
-; Literals
-(string) @string
-(number) @number
-(comment) @comment
+; Control flow keywords
+[
+  "lamen"
+  "lamen_no_kebali"
+  "lamen_no"
+  "selama"
+  "untu"
+  "untuk"
+  "ulang"
+  "sampe"
+  "boat"
+  "jure_mo"
+  "tres"
+] @keyword.control
 
-; Identifiers & functions
+; Logical operators
+[
+  "dan"
+  "atau"
+  "no"
+] @keyword.operator
+
+; Boolean literals
+[
+  (boolean)
+] @boolean
+
+; Nil literal
+(nil) @constant.builtin
+
+; Operators
+[
+  "+"
+  "-"
+  "*"
+  "/"
+  "%"
+  "^"
+  ".."
+  "=="
+  "~="
+  "<"
+  ">"
+  "<="
+  ">="
+  "="
+] @operator
+
+; Punctuation
+[
+  ";"
+  ":"
+  ","
+  "."
+] @punctuation.delimiter
+
+; Brackets
+[
+  "("
+  ")"
+  "["
+  "]"
+  "{"
+  "}"
+] @punctuation.bracket
+
+; Labels
+(label_statement
+  "::" @punctuation.bracket
+  (identifier) @label
+  "::" @punctuation.bracket)
+
+; Variables
 (identifier) @variable
-(function_definition (identifier) @function)
-(parameters (identifier) @parameter)
 
-; Expressions
-(binary_expression) @operator
-(unary_expression) @operator
+; Function definitions
+(function_definition
+  name: (identifier) @function)
 
-; Control flow
-(if_statement) @keyword.control
-(while_statement) @keyword.control
-(for_statement) @keyword.control
-(elseif_clause) @keyword.control
-(else_clause) @keyword.control
+; Function calls
+(function_call
+  function: (identifier) @function)
+
+; Parameters
+(parameters
+  (identifier) @parameter)
+
+; Return statement
+(return_statement
+  "semalik" @keyword
+  (identifier)? @variable)
+
+; Goto statement
+(goto_statement
+  "lalo" @keyword
+  label: (identifier) @label)
+
+; Require statement
+(require_statement
+  "kenang" @keyword
+  module: (string) @string)
+
+; Print statement
+(print_statement
+  "tulis" @function.builtin)
+
+; Table fields
+(table_field
+  name: (identifier) @property)
+
+; Strings
+(string) @string
+
+; Numbers
+(number) @number
+
+; Comments
+(comment) @comment

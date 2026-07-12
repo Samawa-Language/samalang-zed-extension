@@ -1,11 +1,11 @@
 id = "samalang"
 name = "Samalang"
-description = "Samalang extension for zed"
-version = "0.0.1"
+description = "SamaLang support for Zed — syntax highlighting, bracket matching, and auto-indentation"
+version = "0.1.0"
 schema_version = 1
 authors = ["Rzfan03"]
 repository = "https://github.com/Samawa-Language/samalang-zed-extension"
 
 [grammars.samawa_language]
 repository = "https://github.com/Samawa-Language/samalang-treesitter"
-rev = "main"
+rev = "13434a81277d28e09b2a548dffaf3b2d7edd0aab"
