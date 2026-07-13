@@ -1,7 +1,7 @@
 name = "Samalang"
 grammar = "samawa_language"
 path_suffixes = ["sl"]
-line_comments = ["-- "]
+line_comments = ["# "]
 autoclose_before = ";:.,=}])>"
 brackets = [
     { start = "{", end = "}", close = true, newline = true },

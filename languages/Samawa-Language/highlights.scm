@@ -13,14 +13,14 @@
   "selama"
   "boat"
   "untuk"
-  "tulis"
-  "semalik"
-  "jangka_mo"
   "ulang"
   "sampe"
   "lalo"
   "kenang"
+  "tulis"
+  "semalik"
 ] @keyword
+(break_statement) @keyword
 
 ; Control flow keywords
 [
@@ -45,9 +45,7 @@
 ] @keyword.operator
 
 ; Boolean literals
-[
-  (boolean)
-] @boolean
+(boolean) @boolean
 
 ; Nil literal
 (nil) @constant.builtin
@@ -71,12 +69,7 @@
 ] @operator
 
 ; Punctuation
-[
-  ";"
-  ":"
-  ","
-  "."
-] @punctuation.delimiter
+"," @punctuation.delimiter
 
 ; Brackets
 [
@@ -91,7 +84,7 @@
 ; Labels
 (label_statement
   "::" @punctuation.bracket
-  (identifier) @label
+  label: (identifier) @label
   "::" @punctuation.bracket)
 
 ; Variables
@@ -111,8 +104,7 @@
 
 ; Return statement
 (return_statement
-  "semalik" @keyword
-  (identifier)? @variable)
+  "semalik" @keyword)
 
 ; Goto statement
 (goto_statement
@@ -121,7 +113,6 @@
 
 ; Require statement
 (require_statement
-  "kenang" @keyword
   module: (string) @string)
 
 ; Print statement

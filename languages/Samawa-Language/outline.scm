@@ -6,5 +6,5 @@
   (#set! "kind" "function"))
 
 (variable_declaration
-  name: (identifier) @name
+  (identifier) @name
   (#set! "kind" "variable"))
